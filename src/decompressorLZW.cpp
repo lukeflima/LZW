@@ -90,7 +90,9 @@ int decompressLZW(std::string file){
 		}
 
 	}
-	std::ofstream f(file + ".output", std::ios::binary);
+	auto fileOut = file;
+	fileOut.erase(file.size() - 4,file.size() - 1);
+	std::ofstream f(fileOut, std::ios::binary);
 	for(int i = 0; i < decoded.size(); i++){
 		//std::cout << decoded[i];
 		f << decoded[i];
@@ -98,6 +100,6 @@ int decompressLZW(std::string file){
 	//for(auto d: decoded) std::cout << (uint8_t)d << " ";
 	//std::cout ENDL;
 
-	LOG(file + " was decompressed") ENDL;
+	LOG(file + " was decompressed as " + fileOut) ENDL;
 	return 0;
 }

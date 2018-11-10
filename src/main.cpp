@@ -11,7 +11,11 @@ static void show_usage(std::string name)
 
 int main(int argc, const char *argv[])
 {
-	if (argc < 2 || argc > 3) {
+	if (argc < 2) {
+        show_usage(argv[0]);
+        return 1;
+    } else if(argc > 3) {
+        std::cerr << "Too many arguments.\n";
         show_usage(argv[0]);
         return 1;
     }
@@ -26,6 +30,7 @@ int main(int argc, const char *argv[])
 			return 0;
 		}
     }
-	compressLZW(std::string(argv[1]));
+	if(argc == 2) compressLZW(std::string(argv[1]));
+    else show_usage(argv[0]); return 1;
 	return 0;
 }

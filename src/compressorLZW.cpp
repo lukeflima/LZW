@@ -100,7 +100,7 @@ int compressLZW(std::string file){
 		char binary_value = (char) bits.to_ulong();
 		out.put(binary_value);
 	}
-	std::cout << file << " compressed.\n";
+	std::cout << file << " compressed as " << file <<".lzw\n";
 	return 0;
 }
 
