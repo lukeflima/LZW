@@ -1,5 +1,5 @@
 # LZW
-An LZW implementation in C++
+A LZW implementation in C++
 
 # Compile
 Just run a make command.
