@@ -12,25 +12,27 @@ static void show_usage(std::string name)
 int main(int argc, const char *argv[])
 {
 	if (argc < 2) {
-        show_usage(argv[0]);
-        return 1;
-    } else if(argc > 3) {
-        std::cerr << "Too many arguments.\n";
-        show_usage(argv[0]);
-        return 1;
-    }
-    for (int i = 1; i < argc; ++i) {
-        std::string arg(argv[i]);
-        if ((arg == "-h") || (arg == "--help")) {
-            show_usage(argv[0]);
-            return 0;
-        } else if ((arg == "-d") || (arg == "--descompress")) {
+		show_usage(argv[0]);
+		return 1;
+	} else if(argc > 3) {
+		std::cerr << "Too many arguments.\n";
+		show_usage(argv[0]);
+		return 1;
+	}
+	
+	for (int i = 1; i < argc; ++i) {
+		std::string arg(argv[i]);
+		if ((arg == "-h") || (arg == "--help")) {
+			show_usage(argv[0]);
+			return 0;
+		} else if ((arg == "-d") || (arg == "--descompress")) {
 			if(i+1 == argc) decompressLZW(std::string(argv[1]));
-			else 			decompressLZW(std::string(argv[2]));
+			else decompressLZW(std::string(argv[2]));
 			return 0;
 		}
-    }
+	}
+	
 	if(argc == 2) compressLZW(std::string(argv[1]));
-    else show_usage(argv[0]); return 1;
+	else show_usage(argv[0]); return 1;
 	return 0;
 }
