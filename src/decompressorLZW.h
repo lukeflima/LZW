@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
-#ifndef __DECOMP_LZW__
-#define __DECOMP_LZW__
+#ifndef DECOMP_LZW
+#define DECOMP_LZW
 
 #define LOG(x) std::cout << x << " "
 #define LOGNAME(x) std::cout << #x " = " << x << " "
@@ -21,4 +21,4 @@ public:
 
 int decompressLZW(std::string file);
 
-#endif //__DECOMP_LZW__
+#endif //DECOMP_LZW
