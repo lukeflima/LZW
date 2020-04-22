@@ -2,8 +2,8 @@
 #include <vector>
 #include <string>
 
-#ifndef __COMP_LZW__
-#define __COMP_LZW__
+#ifndef COMP_LZW
+#define COMP_LZW
 
 #define LOG(x) std::cout << x << " "
 #define LOGNAME(x) std::cout << #x " = " << x << " "
@@ -26,4 +26,4 @@ public:
 void toBinStr(int value, int bitsCount, std::string& output);
 
 int compressLZW(std::string file);
-#endif //__COMP_LZW__
+#endif //COMP_LZW
